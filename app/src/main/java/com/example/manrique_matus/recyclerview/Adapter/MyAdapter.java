@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.example.manrique_matus.recyclerview.Class.Serie;
 import com.example.manrique_matus.recyclerview.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,8 +20,8 @@ import java.util.List;
  */
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.SeriesViewHolder> {
-    List<Serie> series;
     private String TAG="Text";
+    ArrayList<Serie> series;
 
     public static class SeriesViewHolder extends RecyclerView.ViewHolder{
         CardView card;
@@ -37,7 +38,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.SeriesViewHolder> 
             img=(ImageView)itemView.findViewById(R.id.img);
         }
     }
-    public MyAdapter(List<Serie> series){
+
+
+    public MyAdapter(ArrayList<Serie> series){
         this.series=series;
     }
 
@@ -51,7 +54,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.SeriesViewHolder> 
     @Override
     public void onBindViewHolder(SeriesViewHolder holder, int position) {
         holder.name.setText(series.get(position).getName());
-        holder.caps.setText(series.get(position).getCaps());
+        holder.caps.setText(String.valueOf(series.get(position).getCaps()));
         holder.desc.setText(series.get(position).getDesc());
         holder.img.setImageResource(series.get(position).getImg());
         Log.d(TAG, "onBindViewHolder: "+series.get(position).getDesc());
@@ -60,7 +63,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.SeriesViewHolder> 
 
     @Override
     public int getItemCount() {
-        return 0;
+        return series.size();
     }
 
     @Override

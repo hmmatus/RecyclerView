@@ -14,11 +14,11 @@ import java.util.List;
 public class Serie {
 
     private String name;
-    private int caps;
+    private String caps;
     private int img;
     private String desc;
 
-    public Serie(String name, int caps, int img, String desc) {
+    public Serie(String name, String caps, int img, String desc) {
         this.name = name;
         this.caps = caps;
         this.img = img;
@@ -33,11 +33,11 @@ public class Serie {
         this.name = name;
     }
 
-    public int getCaps() {
+    public String getCaps() {
         return caps;
     }
 
-    public void setCaps(int caps) {
+    public void setCaps(String caps) {
         this.caps = caps;
     }
 
@@ -60,14 +60,4 @@ public class Serie {
     //Creo datos
 
 
-
-    public List<Serie> crearArreglo(){
-        List<Serie> series;
-        series=new ArrayList<>();
-        series.add(new Serie("The Walking Dead",13, R.drawable.negan,"TV show created by Robert Kirgman"));
-        series.add(new Serie("Game of Thrones",13,R.drawable.john,"TV show created by George R. Martin"));
-        series.add(new Serie("Breaking bad",13,R.drawable.walter,"TV show created by Vince Gilligan"));
-
-        return series;
-    }
 }
