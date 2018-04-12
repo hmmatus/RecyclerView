@@ -57,7 +57,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.SeriesViewHolder> 
         holder.caps.setText(String.valueOf(series.get(position).getCaps()));
         holder.desc.setText(series.get(position).getDesc());
         holder.img.setImageResource(series.get(position).getImg());
-        Log.d(TAG, "onBindViewHolder: "+series.get(position).getDesc());
+        //Log.d(TAG, "onBindViewHolder: "+series.get(position).getDesc());
 
     }
 

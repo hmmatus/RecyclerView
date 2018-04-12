@@ -18,32 +18,35 @@ public class MainActivity extends AppCompatActivity {
     MyAdapter adapter;
     ArrayList<Serie> series;
     Serie serie;
-    private String TAG;
+    private String TAG = "Mensaje";
     RecyclerView.LayoutManager layoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         //series=serie.crearArreglo();
         series=new ArrayList<>();
-        series.add(new Serie("The Walking Dead","13", R.drawable.negan,"TV show created by Robert Kirgman"));
-        series.add(new Serie("Game of Thrones","13",R.drawable.john,"TV show created by George R. Martin"));
-        series.add(new Serie("Breaking bad","13",R.drawable.walter,"TV show created by Vince Gilligan"));
-        rv=(RecyclerView)findViewById(R.id.recycler);
+
+        rv = findViewById(R.id.recycler);
         rv.setHasFixedSize(true);
+
         layoutManager=new LinearLayoutManager(this);
         rv.setLayoutManager(layoutManager);
+
+        prepareSeries();
+
         adapter=new MyAdapter(series);
         rv.setAdapter(adapter);
 
-        prepareSeries();
+
     }
 
     public void prepareSeries(){
         series=new ArrayList<>();
-        series.add(new Serie("The Walking Dead","13", R.drawable.negan,"TV show created by Robert Kirgman"));
-        series.add(new Serie("Game of Thrones","13",R.drawable.john,"TV show created by George R. Martin"));
+        series.add(new Serie("The Walking Dead","13", R.drawable.walter,"TV show created by Robert Kirgman"));
+        series.add(new Serie("Game of Thrones","13",R.drawable.walter,"TV show created by George R. Martin"));
         series.add(new Serie("Breaking bad","13",R.drawable.walter,"TV show created by Vince Gilligan"));
         rv=(RecyclerView)findViewById(R.id.recycler);
 
