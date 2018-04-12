@@ -10,6 +10,16 @@
     <style name="cardview">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">7sp</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:text">Prueba</item>
+    </style>
+
+    <style name="textview">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">14sp</item>
+
+
     </style>
 
 </resources>

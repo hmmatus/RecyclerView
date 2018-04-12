@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.manrique_matus.recyclerview.Class.Serie;
@@ -19,7 +21,7 @@ import java.util.List;
  * Created by Manrique_Matus on 008/8/4/2018.
  */
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.SeriesViewHolder> {
+public class MyAdapter extends RecyclerView.Adapter<MyAdapter.SeriesViewHolder>{
     private String TAG="Text";
     ArrayList<Serie> series;
 
@@ -27,15 +29,17 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.SeriesViewHolder> 
         CardView card;
         TextView name,caps,desc;
         ImageView img;
+        RelativeLayout ll;
 
 
         public SeriesViewHolder(View itemView) {
             super(itemView);
             card=(CardView)itemView.findViewById(R.id.card_view);
             name=(TextView)itemView.findViewById(R.id.name);
-            caps=(TextView)itemView.findViewById(R.id.chapters);
+            //caps=(TextView)itemView.findViewById(R.id.chapters);
             desc=(TextView)itemView.findViewById(R.id.desc);
-            img=(ImageView)itemView.findViewById(R.id.img);
+            //img=(ImageView)itemView.findViewById(R.id.img);
+            ll=itemView.findViewById(R.id.img);
         }
     }
 
@@ -54,9 +58,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.SeriesViewHolder> 
     @Override
     public void onBindViewHolder(SeriesViewHolder holder, int position) {
         holder.name.setText(series.get(position).getName());
-        holder.caps.setText(String.valueOf(series.get(position).getCaps()));
+        //holder.caps.setText(String.valueOf(series.get(position).getCaps()));
         holder.desc.setText(series.get(position).getDesc());
-        holder.img.setImageResource(series.get(position).getImg());
+        holder.ll.setBackgroundResource(series.get(position).getImg());
         //Log.d(TAG, "onBindViewHolder: "+series.get(position).getDesc());
 
     }

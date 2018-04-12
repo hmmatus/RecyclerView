@@ -45,9 +45,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void prepareSeries(){
         series=new ArrayList<>();
-        series.add(new Serie("The Walking Dead","13", R.drawable.walter,"TV show created by Robert Kirgman"));
-        series.add(new Serie("Game of Thrones","13",R.drawable.walter,"TV show created by George R. Martin"));
-        series.add(new Serie("Breaking bad","13",R.drawable.walter,"TV show created by Vince Gilligan"));
+        series.add(new Serie("The Walking Dead","13", R.drawable.twd,"TV show created by Robert Kirgman"));
+        series.add(new Serie("Game of Thrones","13",R.drawable.got,"TV show created by George R. Martin"));
+        series.add(new Serie("Breaking bad","13",R.drawable.bbad,"TV show created by Vince Gilligan"));
         rv=(RecyclerView)findViewById(R.id.recycler);
 
         Log.d(TAG, "onCreate:"+series.get(0).getName());
