@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
         //layoutManager=new LinearLayoutManager(this);
         lManager=new LinearLayoutManager(this);
-        rv.setLayoutManager(sManager);
+        rv.setLayoutManager(lManager);
 
         prepareSeries();
 
