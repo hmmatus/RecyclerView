@@ -48,11 +48,7 @@ public class SeriesAdapter extends RecyclerView.Adapter<SeriesAdapter.SeriesView
     @Override
     public void onBindViewHolder(SeriesViewHolder holder, int position) {
         holder.name.setText(series.get(position).getName());
-        //holder.caps.setText(String.valueOf(series.get(position).getCaps()));
-        //holder.desc.setText(series.get(position).getDesc());
         holder.img.setImageResource(series.get(position).getImg());
-        //Log.d(TAG, "onBindViewHolder: "+series.get(position).getDesc());
-
     }
 
     @Override

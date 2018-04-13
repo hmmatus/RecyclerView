@@ -2,6 +2,7 @@ package com.example.manrique_matus.recyclerview;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Log;
@@ -15,7 +16,8 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView rv;
     SeriesAdapter adapter;
     ArrayList<Serie> series;
-    RecyclerView.LayoutManager layoutManager;
+    StaggeredGridLayoutManager sManager;
+    LinearLayoutManager lManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +29,9 @@ public class MainActivity extends AppCompatActivity {
         rv = findViewById(R.id.recycler);
         rv.setHasFixedSize(true);
 
-        layoutManager=new StaggeredGridLayoutManager(1,StaggeredGridLayoutManager.VERTICAL);
-        rv.setLayoutManager(layoutManager);
+        //layoutManager=new LinearLayoutManager(this);
+        lManager=new LinearLayoutManager(this);
+        rv.setLayoutManager(sManager);
 
         prepareSeries();
 
