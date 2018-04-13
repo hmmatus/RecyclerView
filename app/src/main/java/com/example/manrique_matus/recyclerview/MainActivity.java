@@ -16,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView rv;
     SeriesAdapter adapter;
     ArrayList<Serie> series;
-    StaggeredGridLayoutManager sManager;
     LinearLayoutManager lManager;
 
     @Override
@@ -29,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
         rv = findViewById(R.id.recycler);
         rv.setHasFixedSize(true);
 
-        //layoutManager=new LinearLayoutManager(this);
         lManager=new LinearLayoutManager(this);
         rv.setLayoutManager(lManager);
 
@@ -47,10 +45,6 @@ public class MainActivity extends AppCompatActivity {
         series.add(new Serie("The Walking Dead","13", R.drawable.twd,"TV show created by Robert Kirgman"));
         series.add(new Serie("Game of Thrones","13",R.drawable.got,"TV show created by George R. Martin"));
         series.add(new Serie("Breaking bad","13",R.drawable.bbad,"TV show created by Vince Gilligan"));
-
-        Log.d(TAG, "onCreate:"+series.get(0).getName());
-        Log.d(TAG, "onCreate:"+series.get(1).getName());
-        Log.d(TAG, "onCreate:"+series.get(2).getName());
     }
 
 
